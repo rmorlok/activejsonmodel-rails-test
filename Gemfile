@@ -49,9 +49,9 @@ gem "bootsnap", require: false
 if ENV['GITHUB_REPOSITORY'] && ENV['GITHUB_SHA']
   # If this project is installed within a github action these environment variables
   # will be set and we will install directly from github at the specified sha
-  if !(ENV['GITHUB_HEAD_REF'].nil? || ENV['GITHUB_HEAD_REF'].empty?)
-    && ENV['GITHUB_HEAD_REF'] != 'main'
-    && ENV['GITHUB_HEAD_REF'] != 'master'
+  if !(ENV['GITHUB_HEAD_REF'].nil? || ENV['GITHUB_HEAD_REF'].empty?) &&
+    ENV['GITHUB_HEAD_REF'] != 'main' &&
+    ENV['GITHUB_HEAD_REF'] != 'master'
     gem "activejsonmodel", github: ENV['GITHUB_REPOSITORY'], branch: ENV['GITHUB_HEAD_REF']
   else
     gem "activejsonmodel", github: ENV['GITHUB_REPOSITORY'], ref: ENV['GITHUB_SHA']
