@@ -1,0 +1,14 @@
+<p style="color: green"><%= notice %></p>
+
+<h1>Polygons</h1>
+
+<div id="polygons">
+  <% @polygons.each do |polygon| %>
+    <%= render polygon %>
+    <p>
+      <%= link_to "Show this polygon", polygon %>
+    </p>
+  <% end %>
+</div>
+
+<%= link_to "New polygon", new_polygon_path %>

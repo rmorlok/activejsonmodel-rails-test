@@ -1,24 +1,5 @@
-# README
+# ActiveJsonModel Rails Test
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
-
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+A test app whose only purpose is to test the install/execute of the [activejsonmodel gem](https://rubygems.org/gems/activejsonmodel)
+in the context where ActiveRecord is installed (full rails stack). This project is used in the [rmorlok/activejsonmode](https://github.com/rmorlok/activejsonmodel) repo
+as part of the test suite.

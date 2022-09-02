@@ -1,0 +1,10 @@
+<p style="color: green"><%= notice %></p>
+
+<%= render @polygon %>
+
+<div>
+  <%= link_to "Edit this polygon", edit_polygon_path(@polygon) %> |
+  <%= link_to "Back to polygons", polygons_path %>
+
+  <%= button_to "Destroy this polygon", @polygon, method: :delete %>
+</div>

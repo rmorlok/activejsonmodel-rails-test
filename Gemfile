@@ -42,11 +42,18 @@ gem "tzinfo-data", platforms: %i[ mingw mswin x64_mingw jruby ]
 # Reduces boot times through caching; required in config/boot.rb
 gem "bootsnap", require: false
 
-# Use Sass to process CSS
-# gem "sassc-rails"
+# Active JSON Model gem is under test. Will install Rubygems version in standalone mode
+# or version installed from a git URL otherwise
 
-# Use Active Storage variants [https://guides.rubyonrails.org/active_storage_overview.html#transforming-images]
-# gem "image_processing", "~> 1.2"
+
+if ENV['GITHUB_REPOSITORY'] && ENV['GITHUB_SHA']
+  # If this project is installed within a github action these environment variables
+  # will be set and we will install directly from github at the specified sha
+  gem "activejsonmodel", github: ENV['GITHUB_REPOSITORY'], ref: ENV['GITHUB_SHA']
+else
+  gem "activejsonmodel", "~> 0.1.3"
+end
+
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

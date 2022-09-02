@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/rmorlok/activejsonmodel.git
+  revision: 25db2555fa364f5108c1b3f52df6385d87484219
+  ref: 25db2555fa364f5108c1b3f52df6385d87484219
+  specs:
+    activejsonmodel (0.1.3)
+      activemodel (>= 5.1, < 7.1)
+      activesupport (>= 5.1, < 7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -214,6 +223,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
+  activejsonmodel!
   bootsnap
   capybara
   debug
