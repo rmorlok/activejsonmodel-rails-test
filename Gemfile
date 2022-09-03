@@ -57,7 +57,7 @@ if ENV['GITHUB_REPOSITORY'] && ENV['GITHUB_SHA']
     gem "activejsonmodel", github: ENV['GITHUB_REPOSITORY'], ref: ENV['GITHUB_SHA']
   end
 else
-  gem "activejsonmodel", "~> 0.1.3"
+  gem "activejsonmodel", "~> 0.1.4"
 end
 
 
