@@ -1,16 +1,11 @@
 require "test_helper"
 
 class PolygonTest < ActiveSupport::TestCase
-  Minitest.after_run do
-    Polygon.delete_all
-  end
-
   test "create empty polygon" do
     p = Polygon.new(name: 'triangle', points: [])
 
     assert p.save
     assert 0, p.reload.points.length
-    assert_equal 1, Polygon.all.count
   end
 
   test "create polygon" do
@@ -22,6 +17,17 @@ class PolygonTest < ActiveSupport::TestCase
 
     assert 3, p.points.length
     assert p.save
-    assert_equal 1, Polygon.all.count
+
+    pu = Polygon.find_by(id: p.id)
+    assert 3, pu.points.length
+
+    assert 0, pu.points[0].x
+    assert 0, pu.points[0].y
+
+    assert 0, pu.points[1].x
+    assert 10, pu.points[1].y
+
+    assert 10, pu.points[2].x
+    assert 0, pu.points[2].y
   end
 end
