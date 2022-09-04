@@ -4,9 +4,13 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       t.string :first_name
       t.string :last_name
 
+      # This column is used for the ActiveJsonModel as an encrypted attribute.
+      # Because it is an encrypted attribute, it is a string instead of JSON.
+      t.string :credentials
+
       # This column is used for the ActiveJsonModel
       # This column would be better served with jsonb if this was Postgres...
-      t.json :credentials
+      t.json :address
 
       t.timestamps
     end
