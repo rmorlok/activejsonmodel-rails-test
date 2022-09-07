@@ -56,8 +56,10 @@ if ENV['GITHUB_REPOSITORY'] && ENV['GITHUB_SHA']
   else
     gem "activejsonmodel", github: ENV['GITHUB_REPOSITORY'], ref: ENV['GITHUB_SHA']
   end
+elsif ENV['LOCAL_BRANCH']
+  gem "activejsonmodel", github: ENV['GITHUB_REPOSITORY'] || 'rmorlok/activejsonmodel', branch: ENV['LOCAL_BRANCH']
 else
-  gem "activejsonmodel", "~> 0.1.4"
+  gem "activejsonmodel", "~> 0.1.5"
 end
 
 

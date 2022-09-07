@@ -1,3 +1,12 @@
+GIT
+  remote: https://github.com/rmorlok/activejsonmodel.git
+  revision: 6801bea42a687d918974d5543aecc9a36f58730d
+  branch: fix-encrypted-active-record-type
+  specs:
+    activejsonmodel (0.1.5)
+      activemodel (>= 5.1, < 7.1)
+      activesupport (>= 5.1, < 7.1)
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -49,9 +58,6 @@ GEM
     activejob (7.0.3.1)
       activesupport (= 7.0.3.1)
       globalid (>= 0.3.6)
-    activejsonmodel (0.1.4)
-      activemodel (>= 5.1, < 7.1)
-      activesupport (>= 5.1, < 7.1)
     activemodel (7.0.3.1)
       activesupport (= 7.0.3.1)
     activerecord (7.0.3.1)
@@ -228,7 +234,7 @@ PLATFORMS
   x86_64-darwin-21
 
 DEPENDENCIES
-  activejsonmodel (~> 0.1.4)
+  activejsonmodel!
   bootsnap
   capybara
   debug
