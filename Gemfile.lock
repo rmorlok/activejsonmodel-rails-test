@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rmorlok/activejsonmodel.git
-  revision: 6801bea42a687d918974d5543aecc9a36f58730d
+  revision: 5dc1cb4cf4b63c2bfeacb42fd7246ef8c39e597b
   branch: fix-encrypted-active-record-type
   specs:
     activejsonmodel (0.1.5)
@@ -147,6 +147,8 @@ GEM
     pry (0.14.1)
       coderay (~> 1.1)
       method_source (~> 1.0)
+    pry-nav (1.0.0)
+      pry (>= 0.9.10, < 0.15)
     public_suffix (5.0.0)
     puma (5.6.5)
       nio4r (~> 2.0)
@@ -241,6 +243,7 @@ DEPENDENCIES
   importmap-rails
   jbuilder
   pry
+  pry-nav
   puma (~> 5.0)
   rails (~> 7.0.3, >= 7.0.3.1)
   selenium-webdriver

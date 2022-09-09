@@ -14,7 +14,7 @@ class PolygonTest < ActiveSupport::TestCase
       Point.new(x: 0, y: 10),
       Point.new(x: 10, y: 0),
     ])
-
+    
     assert 3, p.points.length
     assert p.save
 
