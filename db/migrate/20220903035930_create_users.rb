@@ -16,6 +16,14 @@ class CreateUsers < ActiveRecord::Migration[7.0]
       # Because it is an encrypted attribute, it is a string instead of JSON. This stores an array.
       t.string :previous_credentials
 
+      # This column is used for the ActiveJsonModel
+      # This column would be better served with jsonb if this was Postgres...
+      t.json :contact_method
+
+      # This column is used for the ActiveJsonModel as an encrypted attribute.
+      # Because it is an encrypted attribute, it is a string instead of JSON. This stores an array.
+      t.string :secret_contact_method
+
       t.timestamps
     end
   end

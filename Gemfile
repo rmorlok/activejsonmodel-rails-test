@@ -59,13 +59,14 @@ if ENV['GITHUB_REPOSITORY'] && ENV['GITHUB_SHA']
 elsif ENV['LOCAL_BRANCH']
   gem "activejsonmodel", github: ENV['GITHUB_REPOSITORY'] || 'rmorlok/activejsonmodel', branch: ENV['LOCAL_BRANCH']
 else
-  gem "activejsonmodel", "~> 0.1.5"
+  gem "activejsonmodel", "~> 0.1.6"
 end
 
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem "debug", platforms: %i[ mri mingw x64_mingw ]
+  gem "minitest-reporters"
 end
 
 group :development do

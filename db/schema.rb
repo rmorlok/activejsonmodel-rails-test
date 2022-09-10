@@ -24,6 +24,8 @@ ActiveRecord::Schema[7.0].define(version: 2022_09_03_035930) do
     t.string "credentials"
     t.json "address"
     t.string "previous_credentials"
+    t.json "contact_method"
+    t.string "secret_contact_method"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

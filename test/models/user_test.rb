@@ -8,6 +8,8 @@ class UserTest < ActiveSupport::TestCase
     assert_nil u.last_name
     assert_nil u.credentials
     assert_nil u.address
+    assert_nil u.contact_method
+    assert_nil u.secret_contact_method
     assert_not_nil u.previous_credentials
     assert_equal 0, u.previous_credentials.length
   end
@@ -22,6 +24,8 @@ class UserTest < ActiveSupport::TestCase
     assert_nil up.last_name
     assert_nil up.credentials
     assert_nil up.address
+    assert_nil u.contact_method
+    assert_nil u.secret_contact_method
     assert_not_nil up.previous_credentials
     assert_equal 0, up.previous_credentials.length
   end
@@ -35,7 +39,9 @@ class UserTest < ActiveSupport::TestCase
       previous_credentials: [
         UsernamePasswordCredential.new(username: 'candidate', password: 'president'),
         OauthTokenCredential.new(access_token: '1234', refresh_token: '5678'),
-      ]
+      ],
+      contact_method: Email.new(label: 'home', email: 'bob@example.com'),
+      secret_contact_method: Address.new(street: '123 Top Secret', city: 'Washington', state: 'DC', zipcode:'20004')
     )
 
     assert u.save
@@ -55,5 +61,11 @@ class UserTest < ActiveSupport::TestCase
 
     assert up.previous_credentials[1].is_a?(OauthTokenCredential)
     assert '1234', up.previous_credentials[1].access_token
+
+    assert up.contact_method.is_a?(Email)
+    assert_equal 'bob@example.com', up.contact_method.email
+
+    assert up.secret_contact_method.is_a?(Address)
+    assert_equal '123 Top Secret', up.secret_contact_method.street
   end
 end
