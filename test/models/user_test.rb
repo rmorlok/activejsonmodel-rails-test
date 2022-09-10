@@ -41,7 +41,7 @@ class UserTest < ActiveSupport::TestCase
     assert u.save
 
     up = User.find_by(id: u.id)
-    
+
     assert up.credentials.is_a?(UsernamePasswordCredential)
     assert_equal 'bdole', up.credentials.username
 
