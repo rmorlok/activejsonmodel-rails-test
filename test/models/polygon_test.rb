@@ -1,6 +1,24 @@
 require "test_helper"
 
 class PolygonTest < ActiveSupport::TestCase
+  test "create blank" do
+    p = Polygon.new
+
+    assert_nil p.name
+    assert_not_nil p.points
+    assert_equal 0, p.points.length
+  end
+
+  test "save blank" do
+    p = Polygon.new
+    assert p.save
+    pu = Polygon.find_by(id: p.id)
+
+    assert_nil pu.name
+    assert_not_nil pu.points
+    assert_equal 0, pu.points.length
+  end
+
   test "create empty polygon" do
     p = Polygon.new(name: 'triangle', points: [])
 
