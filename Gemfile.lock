@@ -1,6 +1,6 @@
 GIT
   remote: https://github.com/rmorlok/activejsonmodel.git
-  revision: 5dc1cb4cf4b63c2bfeacb42fd7246ef8c39e597b
+  revision: 094da325dbf8b2befd30929227f7c5a0ee6a17a3
   branch: fix-encrypted-active-record-type
   specs:
     activejsonmodel (0.1.5)
